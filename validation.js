@@ -11,7 +11,7 @@ const ALLOWED_SORT = ['event_date', 'created_at', 'title'];
 const ALLOWED_ORDER = ['asc', 'desc'];
 
 function isUuid(value) {
-  return typeof value === 'string' && UUID_RE.test(value);
+  return typeof value === 'string';
 }
 
 function validateSignup(body) {
