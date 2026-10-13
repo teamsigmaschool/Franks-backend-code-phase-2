@@ -17,7 +17,7 @@ async function verifySession(req, res, next)
             return next(new ApiError(401, 'Unauthorized', 'Invalid or expired session'));
         }
 
-        const { rows } = await pool.query('SELECT id, username, role FROM users WHERE id = $1', [data.user.id]);
+        const { rows } = await pool.query('SELECT id, username, role FROM festivent_users WHERE id = $1', [data.user.id]);
         if (rows.length === 0)
         {
             return next(new ApiError(500, 'Internal Server Error', 'User profile not found for this account.'));
